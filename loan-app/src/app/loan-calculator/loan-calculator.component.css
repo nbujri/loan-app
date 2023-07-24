@@ -1,0 +1,9 @@
+/* remove overlap between cards */
+.flex {
+  gap: 20px;
+}
+
+.big {
+  font-size: 32px;
+  font-weight: bold;
+}

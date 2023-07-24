@@ -11,11 +11,22 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+#nav-bar {
+  margin-bottom: 50px;
+}
+
+#nav-bar .mat-button:hover {
+  text-decoration: underline;
+}
+
 .main-container {
+  padding-top: 25px;
   width: 90%;
+  /* center container */
   margin: 0 auto;
 }
 
+// center text
 .center {
   text-align: center;
 }

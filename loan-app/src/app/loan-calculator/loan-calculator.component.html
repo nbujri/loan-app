@@ -1,0 +1,103 @@
+<!--
+  title: loan-calculator.component.html
+  author: ngi bujri
+  date: july 20 2023
+-->
+
+<h1 class="center">Loan Calculator</h1>
+
+<br />
+<br />
+
+<div fxLayout="row wrap" class="flex">
+  <!-- loan form input -->
+  <div class="left" fxFlex>
+    <mat-card>
+      <mat-card-title>Loan Information</mat-card-title>
+      <mat-card-content>
+        <form
+          fxLayout="column"
+          [formGroup]="loanForm"
+          (ngSubmit)="calculateLoan()"
+        >
+          <!-- loan amount -->
+          <mat-form-field fxFlex>
+            <mat-label>Loan Amount</mat-label>
+            <input
+              type="number"
+              name="loanAmount"
+              id="loanAmount"
+              matInput
+              required
+              formControlName="loanAmount"
+            />
+          </mat-form-field>
+
+          <!-- interest rate -->
+          <mat-form-field fxFlex>
+            <mat-label>Interest Rate (ex: 1.23)</mat-label>
+            <input
+              type="number"
+              name="intRate"
+              id="intRate"
+              matInput
+              required
+              formControlName="intRate"
+            />
+          </mat-form-field>
+
+          <!-- years -->
+          <mat-form-field fxFlex>
+            <mat-label>Number of Years</mat-label>
+            <input
+              type="number"
+              name="numOfYears"
+              id="numOfYears"
+              matInput
+              required
+              formControlName="numOfYears"
+            />
+          </mat-form-field>
+
+          <!-- submit button -->
+          <button
+            type="submit"
+            id="btnCalculate"
+            color="accent"
+            mat-raised-button
+            [disabled]="!loanForm.valid"
+          >
+            Calculate Loan
+          </button>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <!-- loan summary display -->
+  <div class="right" fxFlex fxLayout="column">
+    <div fxFlex>
+      <mat-card class="mat-elevation-z0">
+        <mat-card-title class="center">Monthly Payment:</mat-card-title>
+        <br />
+        <mat-card-content>
+          <!-- check if there are values for totalInterest and monthlyPayment -->
+          <p *ngIf="totalInterest && monthlyPayment" class="big center">
+            {{ monthlyPayment | currency }}
+          </p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div fxFlex>
+      <mat-card class="mat-elevation-z0">
+        <mat-card-title class="center">Total Interest Paid:</mat-card-title>
+        <br />
+        <mat-card-content>
+          <p *ngIf="totalInterest && monthlyPayment" class="big center">
+            {{ totalInterest | currency }}
+          </p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

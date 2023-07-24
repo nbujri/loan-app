@@ -22,6 +22,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoanCalculatorComponent } from './loan-calculator/loan-calculator.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ContactComponent,
     AboutComponent,
     BaseLayoutComponent,
+    LoanCalculatorComponent,
   ],
   imports: [
     BrowserModule,

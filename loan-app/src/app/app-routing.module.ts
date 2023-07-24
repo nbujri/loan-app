@@ -10,6 +10,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { BaseLayoutComponent } from './base-layout/base-layout.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
+import { LoanCalculatorComponent } from './loan-calculator/loan-calculator.component';
 
 const routes: Routes = [
   {
@@ -18,7 +19,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: AboutComponent,
+        component: LoanCalculatorComponent,
       },
       {
         path: 'contact',
